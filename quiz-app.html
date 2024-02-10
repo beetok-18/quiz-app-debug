@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"> <!-- Link to your external CSS file -->
+</head>
+<body>
+
+<header class="text-center bg-primary text-white p-3">
+    <div class="container">
+        <h1>TotalTester Online - Build Your Test</h1>
+    </div>
+    <div class="history-btn">
+        <button class="btn btn-outline-light">History</button>
+    </div>
+</header>
+
+<div class="content-container" id="main-menu">
+    <main class="container my-5">
+        <div class="text-center mb-3">
+            <h2>Ready to test your knowledge? Let's get started!</h2>
+            <p class="text-secondary">Mike Meyers' CompTIA Security+™ Certification Guide, Third Edition (Exam SY0-601)</p>
+        </div>
+
+        <div class="text-center">
+            <div class="custom-control custom-checkbox d-inline-block">
+                <input type="checkbox" class="custom-control-input" id="customTest">
+                <label class="custom-control-label" for="customTest">I would like to customize my test.</label>
+            </div>
+        </div>
+
+        <div class="custom-test-options" style="display: none;">
+            <div class="slider-container">
+                <label for="question-range">Number of questions:</label>
+                <input type="range" id="question-range" name="questions" min="1" max="150" value="90">
+                <span id="question-value">90</span>
+            </div>
+        
+            <div class="slider-container">
+                <label for="time-range">Length of test:</label>
+                <input type="range" id="time-range" name="time" min="30" max="180" value="90">
+                <span id="time-value">1h 30m</span>
+            </div>
+            
+            <p>Select the chapters you want to include in the test:</p>
+            
+            <div class="chapter-select">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter0">
+                    <label class="custom-control-label" for="chapter0">Ch 0 Mastering Security Basics</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter1">
+                    <label class="custom-control-label" for="chapter1">Ch 1 Risk Management</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter2">
+                    <label class="custom-control-label" for="chapter2">Ch 2 Cryptography</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter3">
+                    <label class="custom-control-label" for="chapter3">Ch 3 Identity and Account Management</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter4">
+                    <label class="custom-control-label" for="chapter4">Ch 4 Tools of the Trade</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter5">
+                    <label class="custom-control-label" for="chapter5">Ch 5 Securing Individual Systems</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter6">
+                    <label class="custom-control-label" for="chapter6">Ch 6 The Basic LAN</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter7">
+                    <label class="custom-control-label" for="chapter7">Ch 7 Securing Wireless LANs</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter8">
+                    <label class="custom-control-label" for="chapter8">Ch 8 Securing Public Servers</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter9">
+                    <label class="custom-control-label" for="chapter9">Ch 9 Securing Dedicated Systems</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter10">
+                    <label class="custom-control-label" for="chapter10">Ch 10 Physical Security</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter11">
+                    <label class="custom-control-label" for="chapter11">Ch 11 Secure Protocols and Applications</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter12">
+                    <label class="custom-control-label" for="chapter12">Ch 12 Testing Infrastructure</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="chapter13">
+                    <label class="custom-control-label" for="chapter13">Ch 13 Dealing with Incidents</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="networkTech">
+                    <label class="custom-control-label" for="networkTech">Exploring Network Technologies and Tools</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="securingNetwork">
+                    <label class="custom-control-label" for="securingNetwork">Securing your Network</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-mode-section mb-3">
+            <p>Select a test mode below.</p>
+            <ul class="list-unstyled">
+                <li>Practice Mode provides optional assistance, hints, and explanations.</li>
+                <li>Exam Mode simulates the authentic exam experience.</li>
+            </ul>
+        </div>
+
+        <div class="button-group">
+            <button id="practice-mode" class="btn custom-button practice-mode">PRACTICE MODE</button>
+            <button id="exam-mode" class="btn custom-button exam-mode">EXAM MODE</button>
+        </div>
+    </main>
+</div>
+
+<div class="quiz-container" style="display: none;">
+    <header class="quiz-header">
+        <h1>TotalTester Online: CompTIA Security+ Certification SY0-601</h1>
+        <div class="quiz-timer">
+            <span>Time Left: </span><span id="timer">1:17:35</span>
+            <span>Question 1 of 90</span>
+        </div>
+    </header>
+    <div class="quiz-body">
+        <p class="question-instruction">Please select the single best answer.</p>
+        <div class="question-container">
+            <!-- Questions will be injected here by JavaScript -->
+        </div>
+        <div class="quiz-footer">
+            <button id="previous-question">Previous</button>
+            <button id="next-question">Next</button>
+        </div>
+    </div>
+    <aside class="quiz-aside">
+        <button id="assistance">Assistance</button>
+        <button id="flag-question">Flag Question</button>
+        <button id="goto-question">Go to Question</button>
+    </aside>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

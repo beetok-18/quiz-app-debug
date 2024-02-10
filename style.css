@@ -1,0 +1,246 @@
+/* Container for the content */
+.content-container {
+    background-color: #fff; /* White background for the container */
+    width: 90%; /* Or any width you prefer */
+    max-width: 800px; /* Maximum width of the container */
+    margin: 2rem auto; /* Centers the container with a margin on the top and bottom */
+    padding: 2rem; /* Space inside the container */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Gives a subtle shadow to the container */
+    border-radius: 8px; /* Slightly rounded corners for the container */
+}
+
+/* Body styling */
+body {
+    background-color: #e5e5e5; /* Light grey background color for the body */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+}
+
+/* Header styling */
+header {
+    background-color: #023d79; /* Dark blue background for the header */
+    color: #fff; /* White text color for contrast */
+    padding: 1rem 2rem; /* Padding inside the header */
+    display: flex; /* Use flexbox for positioning the title and history button */
+    justify-content: space-between; /* Space between the elements */
+    align-items: center; /* Center items vertically */
+}
+
+header h1 {
+    font-size: 24px; /* Font size for the header title */
+    margin: 0; /* Reset default margin */
+}
+
+/* History button styling */
+.history-btn {
+    padding: 0.5rem 1rem; /* Padding inside the button */
+    background: transparent; /* No background for the button */
+    color: #fff; /* White text color for the button */
+    text-transform: uppercase; /* Uppercase text for the button */
+    cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
+}
+
+/* Main content area */
+.main-content h2, .main-content p {
+    text-align: center; /* Center the text */
+    font-size: 18px;
+}
+
+/* Custom checkbox styling */
+.custom-checkbox label {
+    font-size: 14px; /* Font size for the checkbox label */
+    display: block; /* Make the label a block element to occupy its own line */
+}
+
+/* Test mode section styling */
+.test-mode-section p, .test-mode-section ul {
+    text-align: center; /* Center align the text */
+}
+
+/* Button group styling */
+.button-group {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 10px; /* Spacing between buttons */
+}
+
+/* Button styling */
+button.btn {
+    padding: 10px 20px; /* Padding inside the buttons */
+    font-size: 1rem; /* Font size inside the buttons */
+}
+
+/* Custom button colors */
+.custom-button.practice-mode {
+    background-color: #007d11; /* Green color */
+    color: #ffffff;
+}
+
+.custom-button.exam-mode {
+    background-color: #023d79; /* Blue color */
+    color: #ffffff;
+}
+
+/* Footer styling */
+footer {
+    border-top: 1px solid #ccc;
+    background-color: #fff; /* White background for the footer */
+    color: #777; /* Grey text color for the footer */
+    text-align: center; /* Center the text */
+    padding: 1rem 0; /* Padding inside the footer */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Container for customization options */
+.custom-test-options {
+    display: none; /* Hidden by default; will be toggled by JavaScript */
+    background-color: #f7f7f7; /* Light grey background */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px; /* Slightly rounded corners */
+    padding: 1rem; /* Padding inside the container */
+    margin-top: 1rem; /* Space above the container */
+}
+
+/* General styling for each checkbox within the customization options */
+.custom-test-options .custom-control {
+    margin-bottom: 0.5rem; /* Space between each checkbox */
+}
+
+/* Styling for the custom checkbox input */
+.custom-test-options .custom-control-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0; /* Hide the default checkbox input */
+}
+
+/* Styling for the custom checkbox label */
+.custom-test-options .custom-control-label {
+    position: relative;
+    display: block;
+    padding-left: 1.5rem;
+    cursor: pointer;
+    color: #333; /* Dark text for readability */
+    font-size: 0.9rem; /* Slightly smaller font size */
+}
+
+/* Custom checkbox label before pseudo-element for custom checkbox appearance */
+.custom-test-options .custom-control-label::before {
+    content: '';
+    position: absolute;
+    top: 0.25rem;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem; /* Slightly rounded corners for the custom checkbox */
+    background-color: #fff;
+}
+
+/* Custom checkbox label after pseudo-element for the checkmark */
+.custom-test-options .custom-control-input:checked ~ .custom-control-label::after {
+    content: '✓';
+    position: absolute;
+    top: 0.25rem;
+    left: 0.2rem;
+    font-size: 1rem;
+    color: #007bff; /* Bootstrap primary color for the checkmark */
+}
+
+.slider-container {
+    margin: 1rem 0;
+}
+
+.slider-container label {
+    display: block;
+    font-weight: bold;
+}
+
+.slider-container input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.slider-container span {
+    font-weight: bold;
+}
+
+.quiz-container {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #023d79;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.quiz-timer {
+    text-align: right;
+}
+
+.quiz-body {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.question-instruction {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.question-container {
+    margin-bottom: 20px;
+}
+
+.answer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.answer-list li {
+    margin-bottom: 10px;
+}
+
+.quiz-footer {
+    text-align: center;
+}
+
+.quiz-footer button {
+    margin: 0 5px;
+}
+
+.quiz-aside {
+    background-color: #ffc;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    width: 200px;
+    transform: translateY(-50%);
+    padding: 10px;
+    text-align: center;
+}
+
+.quiz-aside button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Add any additional styles for other elements within the custom-test-options */
