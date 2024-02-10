@@ -438,7 +438,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function loadQuestions(selectedChapters, totalQuestions) {
-        console.log("loadQuestions started")
         // Reset questionsToDisplay before loading new questions
         questionsToDisplay = []; 
 
@@ -447,10 +446,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (chapter) {
                 questionsToDisplay = questionsToDisplay.concat(chapter.questions);
             }
-            console.log("Final questionsToDisplay: ", questionsToDisplay);  // Log the entire array
-            console.log("Length of questionsToDisplay: ", questionsToDisplay.length);   //Log the length only
-        });
-
+            
+            setTimeout(() => {  // Introduce a delay
+        console.log("Final questionsToDisplay: ", questionsToDisplay); 
+        console.log("Length of questionsToDisplay: ", questionsToDisplay.length); 
+    }, 1000); // 1000 milliseconds = 1 second delay
+            
         // Here you may shuffle and limit the questionsToDisplay array as needed
         displayQuestion(0); // Start with the first question
     }
