@@ -438,6 +438,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function loadQuestions(selectedChapters, totalQuestions) {
+        console.log("loadQuestions started")
         // Reset questionsToDisplay before loading new questions
         questionsToDisplay = []; 
 
