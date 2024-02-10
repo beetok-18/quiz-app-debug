@@ -446,6 +446,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (chapter) {
                 questionsToDisplay = questionsToDisplay.concat(chapter.questions);
             }
+            console.log("Final questionsToDisplay: ", questionsToDisplay);  // Log the entire array
+            console.log("Length of questionsToDisplay: ", questionsToDisplay.length);   //Log the length only
         });
 
         // Here you may shuffle and limit the questionsToDisplay array as needed
